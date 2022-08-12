@@ -1,0 +1,24 @@
+mkcert 라는 프로그램 사용
+
+Ubuntu
+
+명령어 순서대로 입력
+
+1. 설치
+
+$ sudo apt install libnss3-tools
+
+$ wget -O mkcert https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
+
+$ chmod +x mkcert
+
+$ sudo cp mkcert /usr/local/bin/
+
+2. 인증서 생성
+
+$ mkcert -install
+
+$ mkcert -key-file key.pem -cert-file cert.pem localhost 127.0.0.1 ::1
+
+cert.pem 은 공개키이므로 공개되어도 상관없다
+key.pem 은 개인키이므로 커밋하지 않고 암호처럼 다루어야 한다
